@@ -2,70 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Something Juicy is Coming...</title>
+  <title>Coming Soon - Nikabuchina.store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     body {
       margin: 0;
-      font-family: 'Courier New', monospace;
-      background: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141') no-repeat center center fixed;
+      font-family: 'Share Tech Mono', monospace;
+      background: url('https://images.unsplash.com/photo-1504639725590-34d0984388bd') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
+      color: #ffe3b3;
       text-align: center;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-      backdrop-filter: blur(5px);
+      backdrop-filter: brightness(0.4) blur(2px);
     }
+
     .overlay {
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.7);
       position: absolute;
       top: 0; left: 0;
       width: 100%;
       height: 100%;
       z-index: -1;
     }
+
     h1 {
-      font-size: 3rem;
+      font-size: 3em;
+      color: #ffa500;
+      text-shadow: 0 0 10px #ff8c00;
       margin-bottom: 0.5em;
-      text-transform: uppercase;
     }
+
     p {
-      font-size: 1.2rem;
-      margin-bottom: 1em;
-    }
-    .timer {
-      font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 2px;
+      font-size: 1.2em;
+      color: #ffdead;
       margin-bottom: 2em;
     }
+
+    .timer {
+      font-size: 2.5em;
+      color: #ffffff;
+      text-shadow: 0 0 20px #ffa500;
+      margin-bottom: 2em;
+    }
+
+    .social-icons a {
+      color: #ffa500;
+      margin: 0 15px;
+      font-size: 1.5em;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .social-icons a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px #ffa500;
+    }
+
     footer {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
-      font-size: 0.9rem;
+      margin-top: 3em;
+      font-size: 0.9em;
       color: #aaa;
     }
   </style>
 </head>
 <body>
   <div class="overlay"></div>
-  <h1>Something Juicy is Coming...</h1>
-  <p>We're crafting a meaty experience you won't forget.<br>
-     Smoked, dried, and full of flavor — just like it should be.</p>
-
+  <h1>Hold Your Horses!</h1>
+  <p>We're wrangling up something meaty, spicy and futuristic.<br>Launching soon at Nikabuchina.store!</p>
   <div class="timer" id="countdown">Loading...</div>
-
-  <footer>&copy; 2025 MeatCraft Co. — Premium Dried & Cured Meats</footer>
+  <div class="social-icons">
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://t.me" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a href="https://vk.com" target="_blank"><i class="fab fa-vk"></i></a>
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+  <footer>© 2025 Nikabuchina.store — NeoWestern Jerky Experience</footer>
 
   <script>
-    // ЗАМЕНИ ДАТУ НА СВОЮ — когда сайт откроется
     const launchDate = new Date("2025-05-15T12:00:00").getTime();
-
     const countdown = document.getElementById("countdown");
 
     const updateTimer = () => {
