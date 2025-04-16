@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Something Juicy is Coming...</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      backdrop-filter: blur(5px);
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.65);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5em;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1em;
+    }
+    .timer {
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 2em;
+    }
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <h1>Something Juicy is Coming...</h1>
+  <p>We're crafting a meaty experience you won't forget.<br>
+     Smoked, dried, and full of flavor — just like it should be.</p>
+
+  <div class="timer" id="countdown">Loading...</div>
+
+  <footer>&copy; 2025 MeatCraft Co. — Premium Dried & Cured Meats</footer>
+
+  <script>
+    // ЗАМЕНИ ДАТУ НА СВОЮ — когда сайт откроется
+    const launchDate = new Date("2025-05-15T12:00:00").getTime();
+
+    const countdown = document.getElementById("countdown");
+
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const diff = launchDate - now;
+
+      if (diff <= 0) {
+        countdown.innerHTML = "We’re live!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    };
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
